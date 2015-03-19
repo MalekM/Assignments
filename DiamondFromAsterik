@@ -1,0 +1,43 @@
+/**
+ * Malek Mustapha-Abdullah
+ * October 24, 2014
+ * This program creates a diamond made of asterisks 
+ * with side length inputed by user
+ */
+
+import java.util.Scanner;
+
+public class DiamondAsterik {
+	public static void main(String[]_args) {
+		
+		//Gets user input for the wanted side length
+		//Stores value in variable side
+		System.out.println("Would you like to create a diamond?");
+		System.out.print("If so, please enter the side length of the diamond you would like: ");
+		Scanner inputSide = new Scanner(System.in);
+		int side = inputSide.nextInt();
+		
+		//This loops creates the top half of the diamond
+		for ( int i = 0; i < side; i++) { //Amount of times we want the loop to execute
+			for (int k = side - i - 1; k > 0 ; k--) { //This loop prints out the spaces before the asterisks
+				System.out.print(" ");
+			}
+			for ( int j = 1; j <= 2 * i + 1; j++) { //This loop prints the asterisks
+				System.out.print( "*" );
+			}
+			System.out.println(); //Creates a new line for next row of asterisks
+		}
+		for ( int i = side ; i > 0; i--) { //Amount of times we want the loop to execute
+			for (int k = i - 1; k <= side - 1; k++) { //This loop prints out the spaces before the asterisks
+				System.out.print(" ");
+			}
+			for ( int j = 2 * i - 3; j >= 1; j--) { //This loop prints the asterisks
+				System.out.print( "*" );
+			}
+			System.out.println(); //Creates a new line for next row of asterisks
+		}
+		
+		
+	}
+
+}
